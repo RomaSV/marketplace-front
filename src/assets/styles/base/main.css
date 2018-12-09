@@ -1,0 +1,24 @@
+body {
+
+  }
+
+.main-layout {
+
+  }
+
+  .main-layout_header {
+    background-color: #00B25C;
+    color: white;
+
+    font-size: 42pt;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+
+    padding: 16px;
+
+    box-shadow: 0 2px 2px #00733C55;
+    }
+
+  .main-layout_body {
+    padding: 16px;
+    }

@@ -30,6 +30,7 @@ class Home extends Component {
             console.log(this.state.products)
         }).catch(error => {
             this.setState({
+                products: ServerMock.recommendations,
                 isLoading: false
             });
             console.log('error while getting rec')

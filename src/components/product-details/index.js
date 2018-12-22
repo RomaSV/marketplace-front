@@ -29,16 +29,15 @@ class ProductPage extends Component {
             console.log(this.state.products)
         }).catch(error => {
             this.setState({
+                product: ServerMock.recommendations.find(
+                    product => product.id.toString() === this.props.match.params.id
+                ),
                 isLoading: false
             });
             console.log('error while getting prod')
         });
 
-        // this.setState({
-        //     product: ServerMock.recommendations.find(
-        //         product => product.id.toString() === this.props.match.params.id
-        //     )
-        // });
+
     };
 
 

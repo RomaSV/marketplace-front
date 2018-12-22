@@ -19,7 +19,7 @@ class ProductCard extends Component {
                         {this.props.data.cost}
                     </div>
                     <div className='product-card_rating'>
-                        <Rating rating={Math.floor(Math.random() * 3) + 3}/>
+                        <Rating rating={this.props.data.rating}/>
                     </div>
                 </div>
                 <div className='product-card_name'>

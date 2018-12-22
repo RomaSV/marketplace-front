@@ -1,7 +1,7 @@
-.rating-star {
-  fill: darkgray;
+.rating-stars {
+  fill: lightgray;
   }
 
-  .rating-star.__active {
+  .rating-stars.__active {
     fill: #FFAA40;
     }

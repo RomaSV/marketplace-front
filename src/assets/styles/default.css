@@ -2,6 +2,10 @@
 
 @import "base/main.css";
 @import "base/rating/rating.css";
+@import "base/account-icon/account-icon.css";
 
 @import "project/recommendations/recommendations.css";
 @import "project/recommendations/product-card.css";
+@import "project/products/product-details.css";
+@import "project/user-selector/user-selector.css";
+@import "project/info-section/info-section.css";

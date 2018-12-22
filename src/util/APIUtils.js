@@ -49,3 +49,21 @@ export function getCurrentUser() {
         method: "GET"
     });
 }
+
+export function getRecommendations(userId, page, size) {
+    page = page || 0;
+    size = size || 20;
+
+    return request({
+        url: API_BASE_URL + "/api/recommendations?userId=" + userId + "&page=" + page + "&size=" + size,
+        method: "GET"
+    });
+}
+
+export function getProduct(productId) {
+
+    return request({
+        url: API_BASE_URL + "/api/products/" + productId,
+        method: "GET"
+    });
+}

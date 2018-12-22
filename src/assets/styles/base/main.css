@@ -8,17 +8,50 @@ body {
 
   .main-layout_header {
     background-color: #00B25C;
-    color: white;
-
-    font-size: 42pt;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
-
-    padding: 16px;
-
     box-shadow: 0 2px 2px #00733C55;
+
+    padding: 16px 32px 16px 32px;
     }
 
-  .main-layout_body {
+    .main-layout_header:after {
+      content: '';
+      clear: both;
+      display: table;
+      }
+
+    .main-layout_header_title {
+      color: white;
+
+      font-size: 42pt;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+
+      line-height: 80px;
+
+      float: left;
+      }
+
+    .account-icon-w {
+      float: right;
+      width: 80px;
+      height: 80px;
+
+      cursor: pointer;
+      }
+
+
+.main-layout_body {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  min-height: 85vh;
+  }
+
+  .main-layout_body_left {
+    grid-column: auto;
     padding: 16px;
+    }
+
+  .main-layout_body_right {
+    grid-column: auto;
+    border-left: 2px solid #00b25c;
     }

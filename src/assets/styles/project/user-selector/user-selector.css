@@ -1,0 +1,47 @@
+.user-list {
+  display: none;
+  width: 100%;
+  height: 100%;
+  }
+
+  .user-list.__active {
+    display: block;
+    }
+
+  .user-list_items {
+
+    }
+
+    .user-list_item {
+      padding: 8px;
+      border-bottom: 2px solid #00733c;
+
+      line-height: 72px;
+      }
+
+      .user-list_item:after {
+        content: '';
+        clear: both;
+        display: table;
+        }
+
+      .user-list_item:hover {
+        cursor: pointer;
+
+        background-color: lightgreen;
+        }
+
+      .user-list_item_image {
+        width: 64px;
+        height: 64px;
+
+        padding: 4px;
+
+        float: left;
+        }
+
+      .user-list_item_text {
+        font-size: 20pt;
+        float: left;
+        margin-left: 24px;
+        }

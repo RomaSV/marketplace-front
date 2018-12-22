@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ServerMock from "../ServerMock";
 import Rating from "../ui/Rating";
-import {getProduct, getRecommendations} from "../../util/APIUtils";
+import {getProduct} from "../../util/APIUtils";
 
 class ProductPage extends Component {
 
@@ -34,7 +34,7 @@ class ProductPage extends Component {
                 ),
                 isLoading: false
             });
-            console.log('error while getting prod')
+            console.log('Error while getting a product')
         });
 
 
@@ -52,8 +52,8 @@ class ProductPage extends Component {
             )
         }
         const prod = this.state.product;
-        console.log(prod);
         const props = prod.description.split(';\n');
+
         return (
             <div className='product-details'>
                 <div className='product-details_title'>
@@ -63,23 +63,28 @@ class ProductPage extends Component {
                     <div className='product-details_img-section'>
                         <img className='product-details_img-section_img' src={prod.imageUrl} alt='product'/>
                     </div>
-                    <div className='product-details_info-section'>
-                        <div className='product-details_info-section_price'>
-                            <div className='product-details_info-section_price_label'>
+                    <div className='product-details_interactions-section'>
+                        <div className='product-details_interactions-section_price'>
+                            <div className='product-details_interactions-section_price_label'>
                                 Our price:
                             </div>
-                            <div className='product-details_info-section_price_value'>
+                            <div className='product-details_interactions-section_price_value'>
                                 {prod.cost}
                             </div>
                         </div>
-                        <div className='product-details_info-section_rating'>
-                            <div className='product-details_info-section_rating_label'>
+                        <div className='product-details_interactions-section_rating'>
+                            <div className='product-details_interactions-section_rating_label'>
                                 Average rating:
                             </div>
-                            <div className='product-details_info-section_rating_stars'>
-                                <Rating rating={4}/>
+                            <div className='product-details_interactions-section_rating_stars'>
+                                <Rating rating={prod.rating}/>
                             </div>
                         </div>
+                        <div className='product-details_interactions-section_buy-btn'>
+                            <button className='custom-btn'>Buy now</button>
+                        </div>
+                    </div>
+                    <div className='product-details_info-section'>
                         <div className='product-details_info-section_props'>
                             <div className='product-details_info-section_props_label'>
                                 Description:
@@ -92,7 +97,6 @@ class ProductPage extends Component {
                         </div>
                     </div>
                 </div>
-
             </div>
         );
     }

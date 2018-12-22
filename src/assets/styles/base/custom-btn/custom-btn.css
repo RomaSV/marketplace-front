@@ -1,0 +1,22 @@
+.custom-btn {
+  cursor: pointer;
+
+  background-color: white;
+  color: #f03a79;
+  border: 2px solid #f03a79;
+  border-radius: 16px;
+
+
+  font-size: 24pt;
+  padding: 8px;
+  }
+
+.custom-btn:hover {
+  color: white;;
+  background-color: #f03a79;
+  }
+
+.custom-btn:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(240, 58, 121, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(240, 58, 121, 0.5);
+  }

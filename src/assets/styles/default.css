@@ -3,6 +3,7 @@
 @import "base/main.css";
 @import "base/rating/rating.css";
 @import "base/account-icon/account-icon.css";
+@import "base/custom-btn/custom-btn.css";
 
 @import "project/recommendations/recommendations.css";
 @import "project/recommendations/product-card.css";

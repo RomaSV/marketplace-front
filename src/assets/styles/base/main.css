@@ -22,19 +22,19 @@ body {
     .main-layout_header_title {
       color: white;
 
-      font-size: 42pt;
+      font-size: 40pt;
       font-weight: bold;
       font-family: Arial, sans-serif;
 
-      line-height: 80px;
+      line-height: 60px;
 
       float: left;
       }
 
     .account-icon-w {
       float: right;
-      width: 80px;
-      height: 80px;
+      width: 60px;
+      height: 60px;
 
       cursor: pointer;
       }

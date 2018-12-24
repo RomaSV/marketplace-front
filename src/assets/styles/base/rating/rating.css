@@ -1,7 +1,41 @@
-.rating-stars {
-  fill: lightgray;
-  }
 
-  .rating-stars.__active {
+  .rating-stars_bg {
+    fill: lightgray;
+    }
+
+    .rating-stars_bg.__active {
+      fill: #FFAA40;
+      }
+
+  #star-1,
+  #star-2,
+  #star-3,
+  #star-4,
+  #star-5 {
+    fill: #ffaa4000;
+    }
+
+  .rating-stars:hover #star-1,
+  .rating-stars:hover #star-2,
+  .rating-stars:hover #star-3,
+  .rating-stars:hover #star-4,
+  .rating-stars:hover #star-5{
     fill: #FFAA40;
     }
+
+  #star-1:hover,
+  #star-2:hover,
+  #star-3:hover,
+  #star-4:hover,
+  #star-5:hover {
+    fill: red;
+    }
+
+  #star-1:hover ~ [id^="star"],
+  #star-2:hover ~ [id^="star"],
+  #star-3:hover ~ [id^="star"],
+  #star-4:hover ~ [id^="star"],
+  #star-5:hover ~ [id^="star"] {
+    fill: lightgray
+    }
+

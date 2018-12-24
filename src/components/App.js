@@ -75,24 +75,25 @@ class App extends Component {
         };
 
         return (
-            <Router history={history}>
-                <div className='main-layout'>
-                    <header className='main-layout_header'>
-                        <Link to={"/"}>
-                            <div className='main-layout_header_title'>
-                                Marketplace
-                            </div>
-                        </Link>
-                        <div className='account-icon-w' onClick={this.toogleUserSelector}>
-                            <AccountIcon id={this.state.currentUser}/>
-                        </div>
 
-                    </header>
+            <div className='main-layout'>
+                <header className='main-layout_header'>
+                    <Link to={"/"}>
+                        <div className='main-layout_header_title'>
+                            Marketplace
+                        </div>
+                    </Link>
+                    <div className='account-icon-w' onClick={this.toogleUserSelector}>
+                        <AccountIcon id={this.state.currentUser}/>
+                    </div>
+
+                </header>
+                <Router history={history}>
                     <div className='main-layout_body'>
                         <div className='main-layout_body_left'>
                             <Switch>
                                 <Route path='/products/:id' component={ProductPage}/>
-                                <Route exact path='/' component={home} />
+                                <Route exact path='/' component={home}/>
                                 <Redirect to='/'/>
                             </Switch>
                         </div>
@@ -105,24 +106,25 @@ class App extends Component {
                             </div>
                         </div>
                     </div>
-                    <footer>
-                        <div>Icons made by
-                            <a href='http://www.freepik.com/' title='Freepik'>
-                                Freepik
-                            </a>
-                            {' from '}
-                            <a href='https://www.flaticon.com/' title='Flaticon'>
-                                www.flaticon.com
-                            </a>
-                            is licensed by
-                            <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
-                               target="_blank">
-                                CC 3.0 BY
-                            </a>
-                        </div>
-                    </footer>
-                </div>
-            </Router>
+                </Router>
+                <footer>
+                    <div>Icons made by
+                        <a href='http://www.freepik.com/' title='Freepik'>
+                            Freepik
+                        </a>
+                        {' from '}
+                        <a href='https://www.flaticon.com/' title='Flaticon'>
+                            www.flaticon.com
+                        </a>
+                        is licensed by
+                        <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
+                           target="_blank">
+                            CC 3.0 BY
+                        </a>
+                    </div>
+                </footer>
+            </div>
+
         );
     }
 }

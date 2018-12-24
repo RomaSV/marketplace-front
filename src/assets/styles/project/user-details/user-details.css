@@ -1,0 +1,28 @@
+.user-details {
+  width: 100%;
+  height: 100%;
+  }
+
+  .user-details_username {
+    font-size: 18pt;
+    font-weight: bold;
+
+    text-align: center;
+    }
+
+  .user-details_img-w {
+    width: 128px;
+    height: 128px;
+
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+  .user-details_logout-btn {
+    font-size: 14pt;
+
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 32px;
+    }

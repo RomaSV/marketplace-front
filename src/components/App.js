@@ -8,6 +8,9 @@ import AccountIcon from "./ui/AccountIcon";
 import {Link} from "react-router-dom";
 import InfoSection from "./InfoSection";
 import UserList from "./user-selector";
+import ReactModal from "react-modal";
+import {USER_MODAL_STYLE} from "../util/Constants";
+import {UserDetails} from "./users-details";
 
 class App extends Component {
 
@@ -46,7 +49,7 @@ class App extends Component {
 
     };
 
-    toogleUserSelector = () => {
+    toggleUserSelector = () => {
         this.setState({
             isUserSelectorOpen: !this.state.isUserSelectorOpen
         })
@@ -65,8 +68,8 @@ class App extends Component {
             )
         }
 
-        let userListSelector = this.state.isUserSelectorOpen ? 'user-list __active' : 'user-list';
-        let infoSection = this.state.isUserSelectorOpen ? 'info-section' : 'info-section  __active';
+        // let userListSelector = this.state.isUserSelectorOpen ? 'user-list __active' : 'user-list';
+        // let infoSection = this.state.isUserSelectorOpen ? 'info-section' : 'info-section  __active';
 
         const home = () => {
             return (
@@ -75,56 +78,59 @@ class App extends Component {
         };
 
         return (
-
-            <div className='main-layout'>
-                <header className='main-layout_header'>
-                    <Link to={"/"}>
-                        <div className='main-layout_header_title'>
-                            Marketplace
+            <Router history={history}>
+                <div className='main-layout'>
+                    <header className='main-layout_header'>
+                        <Link to={"/"}>
+                            <div className='main-layout_header_title'>
+                                Marketplace
+                            </div>
+                        </Link>
+                        <div className='account-icon-w' onClick={this.toggleUserSelector}>
+                            <AccountIcon id={this.state.currentUser}/>
                         </div>
-                    </Link>
-                    <div className='account-icon-w' onClick={this.toogleUserSelector}>
-                        <AccountIcon id={this.state.currentUser}/>
-                    </div>
-
-                </header>
-                <Router history={history}>
+                    </header>
                     <div className='main-layout_body'>
                         <div className='main-layout_body_left'>
                             <Switch>
                                 <Route path='/products/:id' component={ProductPage}/>
-                                <Route exact path='/' component={home}/>
+                                <Route exact path='/' component={home} />
                                 <Redirect to='/'/>
                             </Switch>
                         </div>
                         <div className='main-layout_body_right'>
-                            <div className={userListSelector}>
-                                <UserList appCnt={this}/>
-                            </div>
-                            <div className={infoSection}>
+                            {/*<div className={userListSelector}>*/}
+                                {/*<UserList appCnt={this}/>*/}
+                            {/*</div>*/}
+                            <div className='info-section  __active'>
                                 <InfoSection/>
                             </div>
                         </div>
                     </div>
-                </Router>
-                <footer>
-                    <div>Icons made by
-                        <a href='http://www.freepik.com/' title='Freepik'>
-                            Freepik
-                        </a>
-                        {' from '}
-                        <a href='https://www.flaticon.com/' title='Flaticon'>
-                            www.flaticon.com
-                        </a>
-                        is licensed by
-                        <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
-                           target="_blank">
-                            CC 3.0 BY
-                        </a>
-                    </div>
-                </footer>
-            </div>
+                    <footer>
+                        <div>Icons made by
+                            <a href='http://www.freepik.com/' title='Freepik'>
+                                Freepik
+                            </a>
+                            {' from '}
+                            <a href='https://www.flaticon.com/' title='Flaticon'>
+                                www.flaticon.com
+                            </a>
+                            is licensed by
+                            <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
+                               target="_blank">
+                                CC 3.0 BY
+                            </a>
+                        </div>
+                    </footer>
 
+                    <ReactModal isOpen={this.state.isUserSelectorOpen} style={USER_MODAL_STYLE}>
+                        <button className='modal-close-btn' onClick={this.toggleUserSelector}>X</button>
+                        <UserDetails user={this.state.currentUser}/>
+                    </ReactModal>
+
+                </div>
+            </Router>
         );
     }
 }

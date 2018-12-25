@@ -4,13 +4,9 @@ import {Redirect, Route, Router, Switch} from 'react-router';
 import history from './BrowserHistory'
 import Home from './home';
 import ProductPage from './product-details';
-import AccountIcon from "./ui/AccountIcon";
-import {Link} from "react-router-dom";
 import InfoSection from "./InfoSection";
 import UserList from "./user-selector";
-import ReactModal from "react-modal";
-import {USER_MODAL_STYLE} from "../util/Constants";
-import {UserDetails} from "./users-details";
+import {AppHeader} from "./header";
 
 class App extends Component {
 
@@ -80,16 +76,7 @@ class App extends Component {
         return (
             <Router history={history}>
                 <div className='main-layout'>
-                    <header className='main-layout_header'>
-                        <Link to={"/"}>
-                            <div className='main-layout_header_title'>
-                                Marketplace
-                            </div>
-                        </Link>
-                        <div className='account-icon-w' onClick={this.toggleUserSelector}>
-                            <AccountIcon id={this.state.currentUser}/>
-                        </div>
-                    </header>
+                    <AppHeader user={this.state.currentUser}/>
                     <div className='main-layout_body'>
                         <div className='main-layout_body_left'>
                             <Switch>
@@ -123,12 +110,6 @@ class App extends Component {
                             </a>
                         </div>
                     </footer>
-
-                    <ReactModal isOpen={this.state.isUserSelectorOpen} style={USER_MODAL_STYLE}>
-                        <button className='close-btn' onClick={this.toggleUserSelector}>X</button>
-                        <UserDetails user={this.state.currentUser}/>
-                    </ReactModal>
-
                 </div>
             </Router>
         );

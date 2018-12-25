@@ -125,7 +125,7 @@ class App extends Component {
                     </footer>
 
                     <ReactModal isOpen={this.state.isUserSelectorOpen} style={USER_MODAL_STYLE}>
-                        <button className='modal-close-btn' onClick={this.toggleUserSelector}>X</button>
+                        <button className='close-btn' onClick={this.toggleUserSelector}>X</button>
                         <UserDetails user={this.state.currentUser}/>
                     </ReactModal>
 

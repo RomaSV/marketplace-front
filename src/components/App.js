@@ -7,11 +7,11 @@ import ProductPage from './product-details';
 import InfoSection from "./InfoSection";
 import UserList from "./user-selector";
 import {AppHeader} from "./header";
+import {Login} from "./Login";
 
 class App extends Component {
 
     state = {
-        isUserSelectorOpen: false,
         currentUser: null,
         isAuthenticated: false,
         isLoading: false
@@ -45,12 +45,6 @@ class App extends Component {
 
     };
 
-    toggleUserSelector = () => {
-        this.setState({
-            isUserSelectorOpen: !this.state.isUserSelectorOpen
-        })
-    };
-
     componentWillMount() {
         this.loadCurrentUser();
     }
@@ -71,6 +65,12 @@ class App extends Component {
             return (
                 <Home uid={this.state.currentUser}/>
             )
+        };        // let infoSection = this.state.isUserSelectorOpen ? 'info-section' : 'info-section  __active';
+
+        const login = () => {
+            return (
+                <Login cnt={this}/>
+            )
         };
 
         return (
@@ -81,6 +81,7 @@ class App extends Component {
                         <div className='main-layout_body_left'>
                             <Switch>
                                 <Route path='/products/:id' component={ProductPage}/>
+                                <Route path='/login' component={login}/>
                                 <Route exact path='/' component={home} />
                                 <Redirect to='/'/>
                             </Switch>

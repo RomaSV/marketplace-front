@@ -1,0 +1,85 @@
+.login-form-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  }
+
+  .login-form-padding {
+    grid-column: auto;
+    }
+
+  .login-box {
+    grid-column: auto;
+
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+    border-radius: 2vw;
+    height: auto;
+    background: white;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    .login-box_title {
+      margin-top: 28px;
+      text-align: center;
+
+      font-size: 18pt;
+      font-weight: bold;
+      color: #00733c;
+      }
+
+    .login-box_form {
+      margin-top: 32px;
+      }
+
+.login-btn {
+  width: 80%;
+  margin: 32px;
+
+  font-size: 16pt;
+  }
+
+.login-form_input {
+  border: none;
+  border-bottom: 2px solid #00b25c;
+  border-radius: 32px;
+
+  width: 80%;
+
+  padding: 4px;
+  margin: 24px;
+
+  font-size: 14pt;
+  text-align: center;
+  outline: 0;
+  }
+
+  .login-form_input:focus {
+    border-color: inherit;
+    border-bottom: 2px solid #00733c;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    }
+
+  .login-form_input::-webkit-input-placeholder {
+    font-style: italic;
+    color: #ccc;
+    }
+  .login-form_input::-moz-placeholder {
+    font-style: italic;
+    color: #ccc;
+    }
+  .login-form_input:-moz-placeholder {
+    font-style: italic;
+    color: #ccc;
+    }
+  .login-form_input::-ms-input-placeholder {
+    font-style: italic;
+    color: #ccc;
+    }

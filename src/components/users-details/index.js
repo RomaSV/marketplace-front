@@ -1,7 +1,13 @@
 import React, {Component} from 'react';
 import AccountIcon from "../ui/AccountIcon";
+import {Link} from "react-router-dom";
 
 export class UserDetails extends Component {
+
+    closeModal = () => {
+        this.props.cnt.setState({isUserSelectorOpen: false})
+    };
+
     render() {
         return (
             <div className='user-details'>
@@ -12,8 +18,12 @@ export class UserDetails extends Component {
                 <div className='user-details_username'>
                     User
                 </div>
-                <button className='custom-btn user-details_logout-btn'>Log-out</button>
-
+                <Link to='/login'>
+                    <button className='custom-btn user-details_logout-btn'
+                            onClick={this.closeModal}>
+                        Log-out
+                    </button>
+                </Link>
             </div>
         )
     }

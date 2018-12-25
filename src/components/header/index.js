@@ -34,7 +34,7 @@ export class AppHeader extends Component {
 
                 <ReactModal isOpen={this.state.isUserSelectorOpen} style={USER_MODAL_STYLE}>
                     <button className='close-btn' onClick={this.toggleUserSelector}>X</button>
-                    <UserDetails user={this.state.currentUser}/>
+                    <UserDetails user={this.state.currentUser} cnt={this}/>
                 </ReactModal>
             </header>
 

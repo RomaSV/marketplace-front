@@ -74,10 +74,10 @@ class ProductPage extends Component {
                         </div>
                         <div className='product-details_interactions-section_rating'>
                             <div className='product-details_interactions-section_rating_label'>
-                                Average rating:
+                                Rating:
                             </div>
                             <div className='product-details_interactions-section_rating_stars'>
-                                <Rating rating={prod.rating}/>
+                                <Rating rating={prod.rating} clickable={true}/>
                             </div>
                         </div>
                         <div className='product-details_interactions-section_buy-btn'>

@@ -8,40 +8,35 @@ import InfoSection from "./InfoSection";
 import UserList from "./user-selector";
 import {AppHeader} from "./header";
 import {Login} from "./Login";
+import {ACCESS_TOKEN} from "../util/Constants";
 
 class App extends Component {
 
     state = {
         currentUser: null,
         isAuthenticated: false,
-        isLoading: false
+        isLoading: false,
+        isUpdated: false
     };
 
     loadCurrentUser = () => {
         this.setState({
-            isLoading: true
+            isLoading: true,
+            isUpdated: false
         });
 
-        const user = Math.floor(Math.random() * 20) + 1;
-        this.setState({
-            currentUser: user,
-            isLoading: false
-        })
-
-        // getCurrentUser().then(response => {
-        //     this.setState({
-        //         currentUser: response,
-        //         isAuthenticated: true,
-        //         isLoading: false
-        //     });
-        //     console.log(this.state);
-        // })
-        //     .catch(error => {
-        //         console.log(error.message);
-        //         this.setState({
-        //             isLoading: false
-        //         })
-        //     })
+        if (localStorage.getItem('uid')) {
+            this.setState({
+                currentUser: localStorage.getItem('uid').valueOf(),
+                isLoading: false
+            })
+        } else {
+            history.push('/login');
+            this.setState({
+                currentUser: undefined,
+                isLoading: false
+            })
+        }
 
     };
 
@@ -58,14 +53,11 @@ class App extends Component {
             )
         }
 
-        // let userListSelector = this.state.isUserSelectorOpen ? 'user-list __active' : 'user-list';
-        // let infoSection = this.state.isUserSelectorOpen ? 'info-section' : 'info-section  __active';
-
         const home = () => {
             return (
                 <Home uid={this.state.currentUser}/>
             )
-        };        // let infoSection = this.state.isUserSelectorOpen ? 'info-section' : 'info-section  __active';
+        };
 
         const login = () => {
             return (
@@ -87,9 +79,6 @@ class App extends Component {
                             </Switch>
                         </div>
                         <div className='main-layout_body_right'>
-                            {/*<div className={userListSelector}>*/}
-                                {/*<UserList appCnt={this}/>*/}
-                            {/*</div>*/}
                             <div className='info-section  __active'>
                                 <InfoSection/>
                             </div>

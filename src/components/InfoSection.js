@@ -8,7 +8,7 @@ class InfoSection extends Component {
                     About
                 </h3>
                 <div>
-                    This project is...
+                    This project is the base for a web marketplace. Right now its core is recommendation system
                 </div>
                 <h3>
                     Authors
@@ -16,6 +16,12 @@ class InfoSection extends Component {
                 <div>
                     DeKinci & RomanSV
                 </div>
+                <h3>
+                    GitHub:
+                </h3>
+                <a href='https://github.com/SpringingDream'>
+                    https://github.com/SpringingDream
+                </a>
             </div>
         )
     }

@@ -69,7 +69,7 @@ class ProductPage extends Component {
                                 Our price:
                             </div>
                             <div className='product-details_interactions-section_price_value'>
-                                {prod.cost}
+                                {prod.cost + '$'}
                             </div>
                         </div>
                         <div className='product-details_interactions-section_rating'>

@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import history from "./BrowserHistory"
+import {login} from "../util/APIUtils";
+import sha256 from 'js-sha256'
 
 export class Login extends Component {
 
@@ -12,7 +14,17 @@ export class Login extends Component {
         this.props.cnt.setState({
             currentUser: this.state.login.valueOf()
         });
-        history.push("/");
+        const promise = login({
+            login: this.state.login,
+            passwordHash: sha256(this.state.password)
+        });
+
+        promise.then(response => {
+            localStorage.setItem('uid', response);
+            history.push("/");
+            window.location.reload()
+        });
+
     };
 
     handleLoginChange = (event) => {

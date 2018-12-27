@@ -17,7 +17,7 @@ class Rating extends Component {
     }
 
     render() {
-        const rating = this.state.rating * 20;
+        const rating = (Math.random() * 3 + 2) * 20;
 
         if (this.props.clickable) {
             return (

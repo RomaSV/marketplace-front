@@ -16,7 +16,7 @@ class ProductCard extends Component {
                 </div>
                 <div className='product-card_features'>
                     <div className='product-card_price'>
-                        {this.props.data.cost}
+                        {this.props.data.cost + '$'}
                     </div>
                     <div className='product-card_rating'>
                         <Rating rating={this.props.data.rating}/>
